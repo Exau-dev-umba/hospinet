@@ -12,8 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppMedecinInfirmiers"
         tools:targetApi="31">
+
         <activity
-            android:name=".ui.PatientsActivity"
+            android:name=".ui.SpashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +22,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.RegisterPatientsActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.RegisterActivty"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".database.DatabaseActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.ProfileActivity"
             android:exported="false" />
@@ -52,7 +74,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.SpashScreen"
+            android:name=".ui.PatientsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

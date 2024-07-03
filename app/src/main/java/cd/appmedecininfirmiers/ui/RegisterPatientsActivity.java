@@ -1,66 +1,49 @@
 package cd.appmedecininfirmiers.ui;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.viewpager.widget.ViewPager;
 
 import java.util.Objects;
 
 import cd.appmedecininfirmiers.MainActivity;
 import cd.appmedecininfirmiers.R;
-import cd.appmedecininfirmiers.ui.intro_screen.IntroScreenActivity;
 
-public class LoginActivity extends AppCompatActivity {
+public class RegisterPatientsActivity extends AppCompatActivity {
 
     private EditText usernameEditText;
     private EditText passwordEditText;
     private Button loginButton;
-    private TextView textCreerCompte;
-    private TextView textMotDePasse;
-
-
-    @SuppressLint("MissingInflatedId")
+    private TextView textSeConnecte;
     @Override
-    protected void onCreate(Bundle savedInstanceState)  {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         statuscolor();
-        Objects.requireNonNull(getSupportActionBar()).hide();
         //EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_login2);
+        Objects.requireNonNull(getSupportActionBar()).hide();
+        setContentView(R.layout.activity_register_patients);
+
         init();
         loginButton.setOnClickListener(v -> {
             startHomeActivity();
         });
-        textCreerCompte.setOnClickListener(v -> {
-            startCreerCompeActivity();
+        textSeConnecte.setOnClickListener(v -> {
+            startSeConnecterActivity();
         });
-
-        textMotDePasse.setOnClickListener(v -> {
-            startCreerPatientActivity();
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
         });
-    }
-
-    private void init() {
-        usernameEditText = findViewById(R.id.inputUsername);
-        passwordEditText = findViewById(R.id.inputPassword);
-        loginButton = findViewById(R.id.button_connexion);
-        textCreerCompte = findViewById(R.id.textViewCreerCompte);
-        textMotDePasse = findViewById(R.id.textMotDePasseOUblie);
     }
 
     private void startHomeActivity(){
@@ -68,17 +51,17 @@ public class LoginActivity extends AppCompatActivity {
         finish();
     }
 
-    private void startCreerCompeActivity(){
-        startActivity(new Intent(this, RegisterActivty.class));
+    private void startSeConnecterActivity(){
+        startActivity(new Intent(this, LoginActivity.class));
         finish();
     }
 
-    private void startCreerPatientActivity(){
-        startActivity(new Intent(this, PatientsActivity.class));
-        finish();
+    private void init() {
+        usernameEditText = findViewById(R.id.inputUsername);
+        passwordEditText = findViewById(R.id.inputPassword);
+        loginButton = findViewById(R.id.button_connexion);
+        textSeConnecte = findViewById(R.id.connexionBtn);
     }
-
-
 
     public void statuscolor(){
 //changing statusbar color
@@ -89,6 +72,4 @@ public class LoginActivity extends AppCompatActivity {
             window.setStatusBarColor(this.getResources().getColor(R.color.vert));
         }
     }
-
-
 }

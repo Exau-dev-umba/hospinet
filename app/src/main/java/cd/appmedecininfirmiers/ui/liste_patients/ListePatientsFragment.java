@@ -24,8 +24,8 @@ public class ListePatientsFragment extends Fragment {
         binding = FragmentListPatientsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textDashboard;
-        listePatientsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        //final TextView textView = binding.textDashboard;
+        //listePatientsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

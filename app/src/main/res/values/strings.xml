@@ -7,10 +7,14 @@
     <string name="text_connect">Se connecter</string>
     <string name="text_pasCompte">Vous n\'avez pas de compte?</string>
     <string name="text_creerCompte">Créer mon compte</string>
+    <string name="text_ajoutPatient">Ajouter un patient</string>
     <string name="text_email">Email</string>
+    <string name="text_genre">Genre</string>
+    <string name="text_specialisation">Specialisation</string>
     <string name="text_password">Mot de passe</string>
     <string name="text_nomComplet">Nom complet</string>
-    <string name="text_nom">Nom</string>
+    <string name="text_profession">Profession</string>
+    <string name="text_age">Age</string>
     <string name="text_passwordconfirmed">Confirmer mot de passe</string>
     <string name="text_dejacompte">Vous avez déjà un compte?</string>
     <string name="text_reinitialiser">Réinitialiser mon mot de passe</string>
